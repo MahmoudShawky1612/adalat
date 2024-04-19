@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "170774882585",
+    "project_id": "adalat-743ff",
+    "storage_bucket": "adalat-743ff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:170774882585:android:0ac230fc3d508dc48a3d88",
+        "android_client_info": {
+          "package_name": "com.example.adalat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEmeSwgrbL3EI5jjjeImK7xQbEi-37MP0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
