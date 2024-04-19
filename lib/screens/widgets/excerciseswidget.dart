@@ -52,7 +52,7 @@ class _ExcercisesWidgetState extends State<ExcercisesWidget> {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30.0),
           child: Text(
-            "Excercises",
+            "Exercises",
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
           ),
         ),
