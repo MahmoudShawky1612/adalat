@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
-
+import 'package:shared_preferences/shared_preferences.dart';
 import '../login/login.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -39,10 +39,15 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         _controller.next();
       } else {
         _timer?.cancel();
-        // Navigate to next screen after the last image
+        _setOnboardingCompleted();
       }
       _currentIndex++;
     });
+  }
+
+  void _setOnboardingCompleted() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('onboardingCompleted', true);
   }
 
   @override
@@ -96,9 +101,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             child: ElevatedButton(
               onPressed: () {
                 _timer?.cancel();
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Login()),
+                Navigator.pushReplacement( // Replace the current screen
+                    context,
+                    MaterialPageRoute(builder: (context) => Login())
                 );
               },
               child: Text('Skip',
